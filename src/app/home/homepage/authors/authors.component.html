@@ -1,0 +1,13 @@
+<p>
+  {{ getTitle() }}
+</p>
+<ul>
+  <li *ngFor = 'let author of getAuthors()'>{{author.name}} 
+    <star [is-favourite]="author.isFavourite" (on-favourite-change)="onFavouriteChange($event, author)"></star>
+  </li>
+</ul>
+<p>{{longText | summary:30}}</p>
+<input #email (keyup.enter)="onKeyUp1(email.value)"/>
+<input [(ngModel)]="name" (keyup.enter) = "onKeyUp()" />
+<button class='btn btn-primary' [class.active]='isActive' (click)="onSave()">Save</button>
+<button class='btn btn-primary' [style.backgroundColor]="isActive ? 'green': 'grey'" (click)="onCancel($event)">Cancel</button>

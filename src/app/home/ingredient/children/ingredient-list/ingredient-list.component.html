@@ -1,0 +1,11 @@
+<h1>
+    Ingredients
+  </h1>
+  <ul>
+    <li *ngFor = 'let ingredient of ingredients'>
+      {{ingredient.label | uppercase}} @ ${{ingredient.rate | number:'2.2-2'}} 
+      <button class="btn btn-default btn-sm" (click)="onEditClicked(ingredient.id)">Edit</button>
+      <button class="btn btn-default btn-sm" (click)="onDeleteClicked(ingredient.id)">Delete</button>
+    </li>
+  </ul>  
+  <button class='btn btn-primary' (click)="onCreateNewClicked()">Create New</button>

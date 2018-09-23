@@ -1,0 +1,13 @@
+<p>
+  {{ getTitle() }}
+</p>
+<ul>
+  <li *ngFor = 'let course of getCourses()'>{{course.name | uppercase}} 
+    <star [is-favourite]="course.isFavourite" (on-favourite-change)="onFavouriteChange($event)"></star>
+  </li>
+</ul>
+<p>{{longText | summary:100}}</p>
+<input #email (keyup.enter)="onKeyUp1(email.value)"/>
+<input [(ngModel)]="name" (keyup.enter) = "onKeyUp()" />
+<button class='btn btn-primary' [class.active]='isActive' (click)="onSave()">Save</button>
+<button class='btn btn-primary' [style.backgroundColor]="isActive ? 'green': 'grey'" (click)="onCancel($event)">Cancel</button>
