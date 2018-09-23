@@ -64,8 +64,11 @@ const homeRoutes: Routes = [
         component: IngredientComponent,
         children:[
           {
-            path: 'children',
-            loadChildren: 'src/app/home/ingredient/children/ingredient.children.module#IngredientChildrenModule'
+            path: '',
+            loadChildren: 'src/app/home/ingredient/children/ingredient.children.module#IngredientChildrenModule',
+            data: {
+              breadcrumb: null
+            }
           }
         ],
         data: {

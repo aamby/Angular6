@@ -49,10 +49,10 @@ export class IngredientListComponent implements OnInit, OnDestroy {
   }
 
   onEditClicked(id){
-    this.router.navigate(['/app/ingredient/children/edit']);
+    this.router.navigate(['/app/ingredient/edit']);
   }
 
   onCreateNewClicked(){
-    this.router.navigate(['/app/ingredient/children/create']);
+    this.router.navigate(['/app/ingredient/create']);
   }
 }

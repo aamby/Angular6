@@ -16,8 +16,6 @@ export class BreadcrumbComponent implements OnInit {
   public breadcrumbs: IBreadcrumb[];
 
   ngOnInit() {
-    const ROUTE_DATA_BREADCRUMB: string = "breadcrumb";
-
     //subscribe to the NavigationEnd event
     this.router.events.filter(event => event instanceof NavigationEnd).subscribe(event => {
       //set breadcrumbs
@@ -70,7 +68,8 @@ export class BreadcrumbComponent implements OnInit {
         params: child.snapshot.params,
         url: url
       };
-      breadcrumbs.push(breadcrumb);
+      if(breadcrumb.label)
+        breadcrumbs.push(breadcrumb);
 
       //recursive
       return this.getBreadcrumbs(child, url, breadcrumbs);
